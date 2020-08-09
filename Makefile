@@ -19,13 +19,13 @@ CFLAGS  = -g -Wall
 # you can name this target entry anything, but "default" or "all"
 # are the most commonly used names by convention
 #
-default: pseudo-shell
+default: wadsworth
 
 # To create the executable file count we need the object files
 # countwords.o, counter.o, and scanner.o:
 #
-pseudo-shell:  command.o main.o
-	$(CC) $(CFLAGS) -o pseudo-shell command.o main.o
+wadsworth:  command.o main.o
+	$(CC) $(CFLAGS) -o wadsworth command.o main.o
 
 # To create the object file command.o, we need the source
 # files command.c, command.h:
@@ -44,14 +44,14 @@ main.o:  main.c
 # files and *~ backup files:
 #
 clean: 
-	$(RM) pseudo-shell log.txt output.txt *.o *~
+	$(RM) wadsworth log.txt output.txt *.o *~
 
 # To run valgrind in interactive mode, type 'make val-interactive'
 # To run valgrind in file mode, type 'make val-file'
 # Valgrind will run a leak check and store the
 # results in log.txt
-val-interactive: pseudo-shell
-	valgrind --leak-check=full --tool=memcheck ./pseudo-shell > log.txt 2>&1
+val-interactive: wadsworth
+	valgrind --leak-check=full --tool=memcheck ./wadsworth > log.txt 2>&1
 
-val-file: pseudo-shell
-	valgrind --leak-check=full --tool=memcheck ./pseudo-shell -f input.txt > log.txt 2>&1
+val-file: wadsworth
+	valgrind --leak-check=full --tool=memcheck ./wadsworth -f input.txt > log.txt 2>&1
