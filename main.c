@@ -39,7 +39,7 @@
 int MODE;
 // Pointer which will hold an array of all valid commands
 char** VALID_COMMANDS;
-int NUM_OF_COMMANDS = 8;
+int NUM_OF_COMMANDS = 9;
 
 /*--------------------------- Helper Functions ------------------------------*/
 
@@ -146,6 +146,14 @@ void execUnixCmd(char** command, int args){
 		} else {
 			listDir();
 		}
+
+	} else if(strcmp(command[0], "cls") == 0){
+		if(args != 1){
+			fprintf(stderr, "Error! Unsupported parameters for command: %s\n", command[0]);
+		} else {
+			//fprintf(stdout, "%s not yet implemented in command.c\n", command[0]);
+			clearScreen();
+		}
 		
 	} else if(strcmp(command[0], "pwd") == 0){
 		//fprintf(stdout, "%s not yet implemented in command.c\n", command);
@@ -219,13 +227,14 @@ int main(int argc, char** argv) {
 
 	VALID_COMMANDS = (char**) malloc(NUM_OF_COMMANDS * sizeof(char*));
 	VALID_COMMANDS[0] = "ls";
-	VALID_COMMANDS[1] = "pwd";
-	VALID_COMMANDS[2] = "mkdir";
-	VALID_COMMANDS[3] = "cd";
-	VALID_COMMANDS[4] = "cp";
-	VALID_COMMANDS[5] = "mv";
-	VALID_COMMANDS[6] = "rm";
-	VALID_COMMANDS[7] = "cat";
+	VALID_COMMANDS[1] = "cls";
+	VALID_COMMANDS[2] = "pwd";
+	VALID_COMMANDS[3] = "mkdir";
+	VALID_COMMANDS[4] = "cd";
+	VALID_COMMANDS[5] = "cp";
+	VALID_COMMANDS[6] = "mv";
+	VALID_COMMANDS[7] = "rm";
+	VALID_COMMANDS[8] = "cat";
 
 	/* Main Function Variables */
 	int CONTINUE = 1;

@@ -53,6 +53,11 @@ void listDir(){
     closedir(directoryStream);
 }
 
+/*for the cls command*/
+void clearScreen(){
+    system("clear");
+}
+
 /*for the pwd command*/
 void showCurrentDir(){
 
