@@ -1,28 +1,15 @@
 /*
-* Description: Implement a "pseudo-shell" which can perform the
+* Description: a "pseudo-shell" which can perform the
 *				following UNIX commands without flags:
 *				ls, pwd, mkdir, cd, cp, mv, rm, cat
 *
 * Author: Alex Brown
 *
-* Date: 4/19/2020
+* Note:
+*  This project began as an introductory assignment for a 
+*	class I took. I will purposely leave the details vague 
+*	as to discourage cheating. 
 *
-* Notes:
-* 1. I worked closely with Stephanie Schofield toward the 
-*	end of this project. We worked a bit together to make her 
-*	initial do-while loop asking for user input, talked 
-*	extensively on how best to tokenize and process input, 
-*	and utilized similar helper functions
-*
-* 2. I ran into a strange set of errors in valgrind when 
-*  	executing the cat command. When running valgrind (and 
-*	during compilation) I am warned of using an uninitialized 
-*	value in my displayFile function in command.c . 
-*	However, for the life of me, I was unable to implement 
-*	the function in any other way without getting 
-*	unexpected/incorrect results. The project specification 
-*	stated that no *memory leaks* were allowed, so for the 
-*	sake of time I let it be.
 */
 
 /*-------------------------Preprocessor Directives---------------------------*/
