@@ -2,6 +2,9 @@
 * Description: a "pseudo-shell" which can perform the
 *				following UNIX commands without flags:
 *				ls, pwd, mkdir, cd, cp, mv, rm, cat
+
+				Additional commands:
+				cls,
 *
 * Author: Alex Brown
 *
