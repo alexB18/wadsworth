@@ -21,6 +21,74 @@ ssize_t numCharacters(char* inputStr){
     return count;
 }
 
+/*  for the help command.
+prints a list of all commands with their functions
+*/
+void helpMessage(){
+    
+    fprintf(stdout,      "|Commands|                  |    Descriptions  |                    \n"
+                         "\n"
+                         "                             ______________________________________ \n"
+                         "| help |                    |   Prints a list of avaliable commands|\n"
+                         "                            | and their functions.                 |\n"
+                         "                            |______________________________________|\n"
+                         "\n"
+                         "                             ______________________________________ \n"
+                         "| ls |                      |   lists files and directories found  |\n"
+                         "                            | within the working directory.        |\n"
+                         "                            |                                      |\n"
+                         "                            | (This doesn't currently list hidden  |\n"
+                         "                            |       files or folders)              |\n"
+                         "                            |________________  :(  ________________|\n"
+                         "\n"
+                         "                             ______________________________________ \n"
+                         "| pwd |                     |   Prints the working directory.      |\n"
+                         "                            |______________________________________|\n"
+                         "\n"
+                         "                             ______________________________________ \n"
+                         "| cls |                     |   Clears the console of all text.    |\n"
+                         "                            |______________________________________|\n"
+                         "\n"
+                         "                             ______________________________________ \n"
+                         "| cat [fileName] |          |   Prints the contents of {fileName]. |\n"
+                         "                            |______________________________________|\n"
+                         "\n"
+                         "                             ______________________________________ \n"
+                         "| mkdir [dirName] |         |   Create new directory with the      |\n"
+                         "                            | name [dirName].                      |\n"
+                         "                            |______________________________________|\n"
+                         "\n"
+                         "                             ______________________________________ \n"
+                         "| cd [dirName] |            |   Changes the current directory to   |\n"
+                         "                            | ./[dirName] and prints the new       |\n"
+                         "                            | working directory                    |\n"
+                         "                            |______________________________________|\n"
+                         "\n"
+                         "                                                  ______________________________________ \n"
+                         "| cp [sourcePath] to [destinationPath] |         |   Copy file from [sourcePath] to     |\n"
+                         "                                                 | [destinationPath]                    |\n"
+                         "                                                 |                                      |\n"
+                         "                                                 | (This doesn't currently work with    |\n"
+                         "                                                 |           directories)               |\n"
+                         "                                                 |________________  :(  ________________|\n"
+                         "\n"
+                         "                                                  ______________________________________ \n"
+                         "| mv [sourcePath] to [destinationPath] |         |   Move file from [sourcePath] to     |\n"
+                         "                                                 | [destinationPath]                    |\n"
+                         "                                                 |                                      |\n"
+                         "                                                 | (This doesn't currently work with    |\n"
+                         "                                                 |           directories)               |\n"
+                         "                                                 |________________  :(  ________________|\n"
+                         "\n"
+                         "| delete [filename] |                             ______________________________________ \n"
+                         "                                                 |  delete file [filename]              |\n"
+                         "                                                 |                                      |\n"
+                         "                                                 | (This doesn't currently work with    |\n"
+                         "                                                 |           directories)               |\n"
+                         "                                                 |________________  :(  ________________|\n"
+                         "\n");
+}
+
 /*for the ls command*/
 void listDir(){
 
@@ -206,7 +274,7 @@ void deleteFile(char *filename){
 void displayFile(char *filename){
 
     // small/non-negative int which will be used to refer to opened file
-    int currentFileDescriptor;
+    int currentFileDescriptor = 0;
     size_t bytesRead;   // int which refers to the exact number of bytes read by read()
     char contents[currentFileDescriptor];   // string containing the contents of the file
 
